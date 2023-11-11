@@ -17,7 +17,7 @@ const TodoList = () => {
 
   return (
     <div id="todo-list">
-      <h1>todos</h1>
+      <h1>To do list</h1>
       <input
         type="text"
         placeholder="What needs to be done?"
