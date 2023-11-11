@@ -41,7 +41,7 @@ const TodoList = () => {
         )}
       </ul>
       {tasks.length > 0 && (
-        <div id="item-count" className="item-count">
+        <div className="item-count">
           {tasks.length === 1 ? `${tasks.length} item left` : `${tasks.length} items left`}
         </div>
       )}
