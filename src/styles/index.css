@@ -4,6 +4,11 @@
   font-family: 'Helvetica', sans-serif;
 }
 
+h1 {
+  text-align: center;
+  margin-top: 10px;
+}
+
 ul {
   list-style-type: none;
   padding: 0;

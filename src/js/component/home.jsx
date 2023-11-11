@@ -18,7 +18,7 @@ const TodoList = () => {
 
   return (
     <div id="todo-list">
-      <h1>TODO List</h1>
+      <h1>Things to do</h1>
       <input
         type="text"
         placeholder="Add a new task"
@@ -40,9 +40,11 @@ const TodoList = () => {
           ))
         )}
       </ul>
-      <div id="item-count" className="item-count">
-        {tasks.length === 1 ? `${tasks.length} item left` : `${tasks.length} items left`}
-      </div>
+      {tasks.length > 0 && (
+        <div id="item-count" className="item-count">
+          {tasks.length === 1 ? `${tasks.length} item left` : `${tasks.length} items left`}
+        </div>
+      )}
     </div>
   );
 };
