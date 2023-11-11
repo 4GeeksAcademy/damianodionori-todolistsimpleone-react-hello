@@ -1,3 +1,4 @@
+// TodoList.jsx
 import React, { useState } from 'react';
 
 const TodoList = () => {
@@ -17,10 +18,10 @@ const TodoList = () => {
 
   return (
     <div id="todo-list">
-      <h1>To do list</h1>
+      <h1>TODO List</h1>
       <input
         type="text"
-        placeholder="What needs to be done?"
+        placeholder="Add a new task"
         value={taskInput}
         onChange={(e) => setTaskInput(e.target.value)}
         onKeyUp={(e) => e.key === 'Enter' && addTask()}
@@ -39,6 +40,9 @@ const TodoList = () => {
           ))
         )}
       </ul>
+      <div id="item-count" className="item-count">
+        {tasks.length === 1 ? `${tasks.length} item left` : `${tasks.length} items left`}
+      </div>
     </div>
   );
 };

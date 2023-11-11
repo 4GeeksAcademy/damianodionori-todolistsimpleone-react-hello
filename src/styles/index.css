@@ -1,14 +1,7 @@
-/* TodoList.css */
 #todo-list {
   width: 300px;
   margin: 0 auto;
-  font-family: Arial, sans-serif;
-}
-
-h1 {
-  text-align: center;
-  color: #333;
-  margin-top: 20px;
+  font-family: 'Helvetica', sans-serif;
 }
 
 ul {
@@ -24,6 +17,7 @@ li {
   background-color: #f5f5f5;
   padding: 10px;
   border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s;
 }
 
@@ -52,4 +46,11 @@ input[type="text"] {
 #no-tasks {
   text-align: center;
   color: #777;
+}
+
+#item-count {
+  text-align: right;
+  font-size: 14px;
+  color: #555;
+  margin-top: 10px;
 }
