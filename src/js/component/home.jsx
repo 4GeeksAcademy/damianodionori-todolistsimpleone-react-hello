@@ -12,21 +12,18 @@ const TodoList = () => {
   };
 
   const deleteTask = (index) => {
-    const updatedTasks = tasks.filter((_, i) => i !== index);
-    setTasks(updatedTasks);
+    setTasks(tasks.filter((_, i) => i !== index));
   };
 
   return (
     <div id="todo-list">
-      <h1>TODO List</h1>
+      <h1>todos</h1>
       <input
         type="text"
-        placeholder="Add a new task"
+        placeholder="What needs to be done?"
         value={taskInput}
         onChange={(e) => setTaskInput(e.target.value)}
-        onKeyUp={(e) => {
-          if (e.key === 'Enter') addTask();
-        }}
+        onKeyUp={(e) => e.key === 'Enter' && addTask()}
       />
       <ul id="task-list">
         {tasks.length === 0 ? (
