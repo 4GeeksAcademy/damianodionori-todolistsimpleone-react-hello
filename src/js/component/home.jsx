@@ -5,15 +5,16 @@ const TodoList = () => {
   const [tasks, setTasks] = useState([]);
   const [taskInput, setTaskInput] = useState('');
 
+
   const addTask = () => {
-    if (taskInput.trim() !== '') {
-      setTasks([...tasks, taskInput]);
-      setTaskInput('');
+    if (taskInput.trim() !== '') { //checking if the result is not an empty string
+      setTasks([...tasks, taskInput]); //creates a new array with all existing tasks plus the new one
+      setTaskInput(''); //prepares the input field for the user to add another task
     }
   };
 
   const deleteTask = (index) => {
-    setTasks(tasks.filter((_, i) => i !== index));
+    setTasks(tasks.filter((_, i) => i !== index)); // checks the index of each task and keeps only those where the index is not equal to the index parameter
   };
 
   return (
@@ -22,9 +23,9 @@ const TodoList = () => {
       <input
         type="text"
         placeholder="Add a new task"
-        value={taskInput}
-        onChange={(e) => setTaskInput(e.target.value)}
-        onKeyUp={(e) => e.key === 'Enter' && addTask()}
+        value={taskInput} // bind the input field's value to the taskInput state variable
+        onChange={(e) => setTaskInput(e.target.value)} // updates the taskInput state using setTaskInput
+        onKeyUp={(e) => e.key === 'Enter' && addTask()} //if the Enter key was pressed the addTask function is called
       />
       <ul id="task-list">
         {tasks.length === 0 ? (
@@ -40,10 +41,10 @@ const TodoList = () => {
           ))
         )}
       </ul>
-      {tasks.length > 0 && (
+      {tasks.length > 0 && ( //if the array length is not greater than 0 nothing is rendered
         <div className="item-count">
           {tasks.length === 1 ? `${tasks.length} item left` : `${tasks.length} items left`}
-        </div>
+        </div>// if the array length is equal to 1 the first case is rendered, otherwise the second one using a ternary
       )}
     </div>
   );
