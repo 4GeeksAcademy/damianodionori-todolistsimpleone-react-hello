@@ -43,7 +43,7 @@ const TodoList = () => {
       </ul>
       {tasks.length > 0 && ( //if the array length is not greater than 0 nothing is rendered
         <div className="item-count">
-          {tasks.length === 1 ? `${tasks.length} item left` : `${tasks.length} items left`}
+          {tasks.length === 1 ? `1 item left` : `${tasks.length} items left`}
         </div>// if the array length is equal to 1 the first case is rendered, otherwise the second one using a ternary
       )}
     </div>
