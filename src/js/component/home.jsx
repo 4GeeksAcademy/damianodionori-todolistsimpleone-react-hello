@@ -18,35 +18,46 @@ const TodoList = () => {
   };
 
   return (
-    <div id="todo-list">
+    <body>
       <h1>Things to do</h1>
-      <input
-        type="text"
-        placeholder="Add a new task"
-        value={taskInput} // bind the input field's value to the taskInput state variable
-        onChange={(e) => setTaskInput(e.target.value)} // updates the taskInput state using setTaskInput
-        onKeyUp={(e) => e.key === 'Enter' && addTask()} //if the Enter key was pressed the addTask function is called
-      />
-      <ul id="task-list">
-        {tasks.length === 0 ? (
-          <p id="no-tasks">No tasks, add a task</p>
-        ) : (
-          tasks.map((task, index) => (
-            <li key={index}>
-              <span>{task}</span>
-              <span className="delete-task" onClick={() => deleteTask(index)}>
-                ❌
-              </span>
-            </li>
-          ))
-        )}
-      </ul>
-      {tasks.length > 0 && ( //if the array length is not greater than 0 nothing is rendered
-        <div className="item-count">
-          {tasks.length === 1 ? `1 item left` : `${tasks.length} items left`}
-        </div>// if the array length is equal to 1 the first case is rendered, otherwise the second one using a ternary
-      )}
-    </div>
+      <div className='paper'>
+        <div className='lines'>
+          <div className='contentEditable'>
+            <input
+              type="text"
+              placeholder="Add a new task"
+              value={taskInput} // bind the input field's value to the taskInput state variable
+              onChange={(e) => setTaskInput(e.target.value)} // updates the taskInput state using setTaskInput
+              onKeyUp={(e) => e.key === 'Enter' && addTask()} //if the Enter key was pressed the addTask function is called
+            />
+            <ul id="task-list">
+              {tasks.length === 0 ? (
+                <p id="no-tasks">No tasks, add a task</p>
+              ) : (
+                tasks.map((task, index) => (
+                  <li key={index}>
+                    <span>{task}</span>
+                    <span className="delete-task" onClick={() => deleteTask(index)}>
+                      ❌
+                    </span>
+                  </li>
+                ))
+              )}
+            </ul>
+            {tasks.length > 0 && ( //if the array length is not greater than 0 nothing is rendered
+              <div className="item-count">
+                {tasks.length === 1 ? `1 item left` : `${tasks.length} items left`}
+              </div>// if the array length is equal to 1 the first case is rendered, otherwise the second one using a ternary
+            )}
+          </div>
+        </div>
+        <div className="holes">
+          <div className="hole"></div>
+          <div className="hole"></div>
+          <div className="hole"></div>
+        </div>
+      </div>
+    </body>
   );
 };
 
